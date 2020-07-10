@@ -93,8 +93,8 @@ func (j DataType) postformHandler (resp http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(resp,"Результат шифрования: ", j.CryptResult)
 	fmt.Fprintln(resp, "Результат дешифрования: ", string(j.EncryptData))
 	/*data := JsonDataType{
-		JsonData:    "fuck fuck fuck",
-		CryptResult: "suka suka suka",
+		JsonData:    "fffffffff",
+		CryptResult: "sfffffff",
 	}
 	tmpl, _ := template.ParseFiles("templates/coursesEncrypt.html")
 	tmpl.Execute(resp, data)*/
