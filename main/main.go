@@ -5,7 +5,6 @@ import (
 	"encoding/xml"
 	"fmt"
 	"gutil/bhx"
-	"html/template"
 	"io/ioutil"
 	"mux"
 	"net/http"
@@ -87,14 +86,14 @@ func msgHandler (resp http.ResponseWriter, r *http.Request) {
 }
 
 func (j DataType) courcesHandler (resp http.ResponseWriter, r *http.Request) {
-	//fmt.Fprint(resp, j.JsonData)
+	fmt.Fprint(resp, j.JsonData)
 	//http.ServeFile(resp, r, "static/courses.html")
-	data := DataType{JsonData: j.JsonData}
+	/*data := DataType{JsonData: j.JsonData}
 	tmpl, _ := template.ParseFiles("templates/courses.html")
 	err := tmpl.Execute(resp, data)
 	if err != nil{
 		fmt.Println(err)
-	}
+	}*/
 }
 
 func (j DataType) postformHandler (resp http.ResponseWriter, r *http.Request) {
