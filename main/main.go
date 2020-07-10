@@ -58,26 +58,9 @@ func main () {
 	r.HandleFunc("/postform", Data.postformHandler)
 	http.Handle("/", r)
 
-	/*for {
-		bs := make([]byte, 1014)
-		n, err := resp.Body.Read(bs)
-		fmt.Println(string(bs[:n]))
-
-		if n == 0 || err != nil {
-			break
-		}
-	}*/
-
-	//msgHandler :=msg("Hello world")
 	fmt.Println("Sever is listening...")
 	http.ListenAndServe("localhost:8181", r)
 }
-
-/*type msg string
-
-func (m msg) ServeHTTP (resp http.ResponseWriter, req *http.Request) {
-	fmt.Fprint(resp, m)
-}*/
 
 func msgHandler (resp http.ResponseWriter, r *http.Request) {
 	http.ServeFile(resp, r, "static/courses.html")
